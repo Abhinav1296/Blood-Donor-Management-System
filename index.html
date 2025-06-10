@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <a class="navbar-brand" href="/">Blood Donor System</a>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="text-center display-3 animate__animated animate__bounceIn">Blood Donor Management System</h1>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8">
+                <div class="card shadow-lg animate__animated animate__fadeIn">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Compatible Blood Type Donors</h3>
+                        <table class="table table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Blood Type</th>
+                                    <th>Donate Blood To</th>
+                                    <th>Receive Blood From</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A+</td>
+                                    <td>A+, AB+</td>
+                                    <td>A+, A-, O+, O-</td>
+                                </tr>
+                                <tr>
+                                    <td>O+</td>
+                                    <td>O+, A+, B+, AB+</td>
+                                    <td>O+, O-</td>
+                                </tr>
+                                <tr>
+                                    <td>B+</td>
+                                    <td>B+, AB+</td>
+                                    <td>B+, B-, O+, O-</td>
+                                </tr>
+                                <tr>
+                                    <td>AB+</td>
+                                    <td>AB+</td>
+                                    <td>Everyone</td>
+                                </tr>
+                                <tr>
+                                    <td>A-</td>
+                                    <td>A+, A-, AB+, AB-</td>
+                                    <td>A-, O-</td>
+                                </tr>
+                                <tr>
+                                    <td>O-</td>
+                                    <td>Everyone</td>
+                                    <td>O-</td>
+                                </tr>
+                                <tr>
+                                    <td>B-</td>
+                                    <td>B+, B-, AB+, AB-</td>
+                                    <td>B-, O-</td>
+                                </tr>
+                                <tr>
+                                    <td>AB-</td>
+                                    <td>AB+, AB-</td>
+                                    <td>AB-, A-, B-, O-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInLeft">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Predict Availability</h3>
+                        <p class="card-text">Use our advanced ML model to check if blood is available for your needs.</p>
+                        <a href="{{ url_for('predict') }}" class="btn btn-primary btn-block">Go to Prediction</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInRight">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Manage Donors</h3>
+                        <p class="card-text">View and analyze donor data to optimize blood bank operations.</p>
+                        <a href="{{ url_for('dataset_view') }}" class="btn btn-primary btn-block">View Dataset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

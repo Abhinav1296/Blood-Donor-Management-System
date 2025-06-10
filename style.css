@@ -1,0 +1,168 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF;
+    color: #333;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background: linear-gradient(45deg, #FF0000, #CC0000);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.navbar-brand {
+    color: #FFFFFF !important;
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1600px;
+}
+
+.display-3 {
+    color: #FF0000;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+}
+
+.card-title {
+    color: #FF0000;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #FF0000, #CC0000);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #CC0000, #FF0000);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+.btn-primary.btn-block {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-control, .custom-select {
+    border: 2px solid #FF0000;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1.2rem;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.custom-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23FF0000' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592c.86 0 1.319 1.013.753 1.658L8.753 11.14a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") no-repeat right 0.75rem center/8px 10px;
+    background-color: #FFFFFF;
+}
+
+.form-control:focus, .custom-select:focus {
+    border-color: #CC0000;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+.form-group label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #FFFFFF;
+    padding: 0 5px;
+    color: #FF0000;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.table {
+    font-size: 14px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.table th {
+    background: linear-gradient(45deg, #FF0000, #CC0000);
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.table td {
+    border-color: #FFE6E6;
+}
+
+.alert-success {
+    background-color: #FFE6E6;
+    border-color: #FF0000;
+    color: #333;
+    border-radius: 8px;
+}
+
+.alert-danger {
+    background: linear-gradient(45deg, #FF0000, #CC0000);
+    border: none;
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.animate__animated.animate__fadeIn {
+    animation-duration: 1s;
+}
+
+.animate__animated.animate__fadeInLeft {
+    animation-duration: 1.2s;
+}
+
+.animate__animated.animate__fadeInRight {
+    animation-duration: 1.2s;
+}
+
+.animate__animated.animate__bounceIn {
+    animation-duration: 1.5s;
+}
+
+.animate__animated.animate__pulse.animate__infinite {
+    animation-duration: 2s;
+}

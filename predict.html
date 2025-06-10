@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Donor Availability</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <a class="navbar-brand" href="/">Blood Donor Management System</a>
+    </nav>
+    <div class="container mt-5">
+        <div class="card shadow-lg animate__animated animate__fadeIn">
+            <div class="card-body">
+                <h2 class="card-title text-center">Predict Donor Availability</h2>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" name="age" id="age" class="form-control" required min="18" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="blood_type">Blood Type</label>
+                        <select name="blood_type" id="blood_type" class="form-control custom-select" required>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <select name="city" id="city" class="form-control custom-select" required>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="blood_bank">Blood Bank</label>
+                        <select name="blood_bank" id="blood_bank" class="form-control custom-select" required>
+                            <option value="Apollo BB">Apollo BB</option>
+                            <option value="Fortis BB">Fortis BB</option>
+                            <option value="City Blood Bank">City Blood Bank</option>
+                            <option value="Govt BB">Govt BB</option>
+                            <option value="LifeLine BB">LifeLine BB</option>
+                            <option value="Red Cross">Red Cross</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="units_needed">Units Needed</label>
+                        <input type="number" name="units_needed" id="units_needed" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="blood_needed_date">Blood Needed Date</label>
+                        <input type="date" name="blood_needed_date" id="blood_needed_date" class="form-control" required value="{{ now_date }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block animate__animated animate__pulse animate__infinite">Predict</button>
+                </form>
+                {% if result %}
+                <div class="mt-4 alert alert-success">
+                    <h4>Prediction Result</h4>
+                    <p>Available: {{ result.available }}</p>
+                    <p>Confidence: {{ result.probability | round(2) }}%</p>
+                </div>
+                {% endif %}
+                {% if error %}
+                <div class="mt-4 alert alert-danger">
+                    {{ error }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Set default date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('blood_needed_date').value = today;
+        });
+    </script>
+</body>
+</html>
